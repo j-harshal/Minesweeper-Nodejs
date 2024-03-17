@@ -1,0 +1,2 @@
+const mongoUrl =
+    'mongodb+srv://jharshal500:<password>@cluster0.rfxt1ds.mongodb.net/';
