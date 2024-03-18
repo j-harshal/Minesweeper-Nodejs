@@ -76,7 +76,8 @@ async function takeTurn (player) {
             await storeGameResults (
               players[0],
               players[1],
-              `${player} hit a mine! ${player} loses.`
+              `${player} hit a mine! ${player} loses.`,
+              grid
             );
             process.exit (0);
           }
@@ -92,7 +93,7 @@ async function takeTurn (player) {
 }
 
 // Function to store game results in MongoDB
-async function storeGameResults (player1, player2, result) {
+async function storeGameResults (player1, player2, result, gridState) {
   try {
     await client.connect ();
     const db = client.db (dbName);
@@ -100,6 +101,7 @@ async function storeGameResults (player1, player2, result) {
     const gameResult = {
       players: [player1, player2],
       result: result,
+      gridState: gridState
     };
     await collection.insertOne (gameResult);
     console.log ('Game results stored in MongoDB.');
