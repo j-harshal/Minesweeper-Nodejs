@@ -23,7 +23,7 @@ In this game, players take turns to reveal tiles on a 5x5 grid. Each tile may co
 - Each player gets to open 1 tile per turn
 - The game can end in a win/loss or a draw
 - The state of the grid is printed after each turn in the terminal
-- MongoDB is used to store game information, player information, game states, and results
+- MongoDB is used to store game information, player information, final game state, and results.
 
 ## Running the Game
 
